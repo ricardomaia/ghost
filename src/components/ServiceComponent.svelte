@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import * as messages from "../messages.json";
+  import * as config from "../config.json";
 
   onMount(async () => {
     console.log("Mounted");
@@ -21,16 +22,12 @@
   };
 
   const getComponents = (async () => {
-    const response = await fetch(
-      "https://api.github.com/repos/ricardomaia/statuspage/issues?state=all&labels=component"
-    );
+    const response = await fetch(config.componentUrl);
     return await response.json();
   })();
 
   const getIncidents = (async () => {
-    const response = await fetch(
-      "https://api.github.com/repos/ricardomaia/statuspage/issues?state=all&labels=incident"
-    );
+    const response = await fetch(config.incidentUrl);
     return await response.json();
   })();
 

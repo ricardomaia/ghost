@@ -1,0 +1,4 @@
+{
+  "componentUrl": "https://api.github.com/repos/ricardomaia/statuspage/issues?state=all&labels=component",
+  "incidentUrl": "https://api.github.com/repos/ricardomaia/statuspage/issues?state=all&labels=incident"
+}
