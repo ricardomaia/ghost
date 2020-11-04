@@ -1,6 +1,7 @@
 <script>
   import ServiceComponent from "./components/ServiceComponent.svelte";
+  import Footer from "./components/Footer.svelte";
 </script>
 
-<h1>Service Status</h1>
 <ServiceComponent />
+<Footer />

@@ -1,4 +1,25 @@
 <script>
+  import { onMount } from "svelte";
+  import * as messages from "../messages.json";
+
+  onMount(async () => {
+    console.log("Mounted");
+  });
+
+  const getLanguage = () => {
+    const userLang = navigator.language || navigator.userLanguage;
+    const lang = userLang.replace("-", "_");
+    const supportedLanguages = ["en", "pt-BR"];
+    supportedLanguages.includes(userLang)
+      ? console.log(`'${userLang}' supported`)
+      : console.log(`'${userLang}' NOT supported`);
+    return lang;
+  };
+
+  const getMessage = (label) => {
+    return messages[getLanguage()][label];
+  };
+
   const getComponents = (async () => {
     const response = await fetch(
       "https://api.github.com/repos/ricardomaia/statuspage/issues?state=all&labels=component"
@@ -30,9 +51,25 @@
     text-align: center;
   }
 
+  .section::first-letter {
+    text-transform: uppercase;
+  }
+
+  .section {
+    display: block;
+    background: #efefef;
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: solid 1px #c0c0c0;
+  }
+
   .label span {
     color: black;
     mix-blend-mode: multiply;
+  }
+
+  .label span::first-letter {
+    text-transform: uppercase;
   }
   .component {
     background-color: rgb(247, 248, 249);
@@ -51,12 +88,88 @@
     border-radius: 3px;
     background-color: white;
     padding: 16px;
+    max-width: 80vw;
+    margin: auto;
+  }
+
+  .error {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+  }
+
+  .error {
+    color: #d8000c;
+    background-color: #ffbaba;
+  }
+
+  @keyframes pulse {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0.25;
+      transform: scale(0.75);
+    }
+  }
+
+  .spinner-box {
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+  }
+
+  /* PULSE BUBBLES */
+
+  .pulse-container {
+    width: 70px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pulse-bubble {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #a32a61;
+  }
+
+  .pulse-bubble-1 {
+    animation: pulse 2s ease 0s infinite alternate;
+  }
+  .pulse-bubble-2 {
+    animation: pulse 2s ease 0.2s infinite alternate;
+  }
+  .pulse-bubble-3 {
+    animation: pulse 4s ease 4s infinite alternate;
+  }
+
+  #app {
+    padding: 10px 80px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 </style>
 
 <div id="wrapper">
+  <div class="spinner-box">
+    <div class="pulse-container">
+      <div class="pulse-bubble pulse-bubble-1" />
+      <div class="pulse-bubble pulse-bubble-2" />
+      <div class="pulse-bubble pulse-bubble-3" />
+    </div>
+  </div>
+
+  <div id="app">{getMessage('service_status')}</div>
+  <div class="section">{getMessage('component')}</div>
   {#await getComponents}
-    <p>carregando...</p>
+    <p>{getMessage('loading')}...</p>
   {:then data}
     {#each data as component}
       <div class="component">
@@ -65,36 +178,36 @@
           &nbsp;
           {#if label.name == 'operational' || label.name == 'performance issues' || label.name == 'major outage' || label.name == 'partial outage'}
             <div class="label" style="background:#{label.color}">
-              <span>{label.name}</span>
+              <span>{getMessage(label.name)}</span>
             </div>
           {/if}
         {/each}
       </div>
     {/each}
   {:catch error}
-    <p>An error occurred!</p>
+    <div class="error">{error}</div>
   {/await}
-  <hr />
 
-  Past incidents
+  <div class="section ucfirst">{getMessage('past_incidents')}</div>
   {#await getIncidents}
-    <p>carregando...</p>
+    <p>{getMessage('loading')} ...</p>
   {:then data}
     {#each data as incident}
       <div class="incident">
-        {incident.title}<br />
-        {incident.body}<br />
-        Registrado:
-        {dateFormat(incident.created_at)}<br />
-        Atualizado:
-        {dateFormat(incident.updated_at)}<br />
-        Encerrado:
-        {dateFormat(incident.closed_at)}<br />
-
-        <div>{incident.state}</div>
+        <h3>{incident.title} - {incident.state}</h3>
+        <p>{incident.body}</p>
+        {getMessage('registered')}:
+        {dateFormat(incident.created_at)}
+        -
+        {getMessage('updated')}:
+        {dateFormat(incident.updated_at)}
+        -
+        {getMessage('closed')}:
+        {dateFormat(incident.closed_at)}
+        <hr />
       </div>
     {/each}
   {:catch error}
-    <p>An error occurred!</p>
+    <div class="error">{error}</div>
   {/await}
 </div>

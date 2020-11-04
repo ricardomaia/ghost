@@ -1,0 +1,32 @@
+{
+  "en": {
+    "component": "component",
+    "incident": "incident",
+    "service_status": "Service Status",
+    "past_incidents": "Past incidents",
+    "loading": "loading",
+    "error": "error",
+    "operational": "operational",
+    "performance issues": "performance issues",
+    "major outage": "major outage",
+    "partial outage": "partial outage",
+    "registered": "registered",
+    "updated": "updated",
+    "closed": "closed"
+  },
+  "pt_BR": {
+    "component": "componente",
+    "incident": "incidente",
+    "service_status": "Status dos Serviços",
+    "past_incidents": "Incidentes anteriores",
+    "loading": "carregando",
+    "error": "erro",
+    "operational": "operacional",
+    "performance issues": "problemas de desempenho",
+    "major outage": "indisponível",
+    "partial outage": "parcialmente indisponível",
+    "registered": "registrado",
+    "updated": "atualizado",
+    "closed": "fechado"
+  }
+}
