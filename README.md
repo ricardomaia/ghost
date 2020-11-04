@@ -1,5 +1,9 @@
 # Status Page
 
+A status page to host on GitHub pages. Its uses GitHub issues to show the status of your service components and incidents.
+
+<img src="https://github.com/ricardomaia/statuspage/blob/main/screenshot.png" width=450 />
+
 _Note that you will need to have [Node.js](https://nodejs.org) installed._
 
 ## Get started
