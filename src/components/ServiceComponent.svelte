@@ -47,7 +47,7 @@
     border-radius: 16px;
     font-size: 13px;
     transition: all 0.3s ease 0s;
-    min-width: 120px;
+    min-width: 200px;
     text-align: center;
   }
 
@@ -61,6 +61,8 @@
     padding: 10px;
     border-radius: 5px 5px 0px 0px;
     border-bottom: solid 1px #c0c0c0;
+    color: #808080;
+    font-weight: bolder;
   }
 
   .label span {
