@@ -2,7 +2,11 @@
 
 A status page to host on GitHub pages. Its uses GitHub issues to show the status of your service components and incidents.
 
-<img src="https://github.com/ricardomaia/statuspage/blob/main/screenshot.png" width="700"/>
+Do you like it? Support this project!
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B12LOPH)
+
+<img src="https://github.com/ricardomaia/statuspage/blob/main/screenshot.png" width="600"/>
 
 ## Demo
 https://ricardomaia.github.io/statuspage/
