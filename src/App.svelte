@@ -1,7 +1,7 @@
 <script>
-  import ServiceComponent from "./components/ServiceComponent.svelte";
+  import StatusPage from "./components/StatusPage.svelte";
   import Footer from "./components/Footer.svelte";
 </script>
 
-<ServiceComponent />
+<StatusPage />
 <Footer />

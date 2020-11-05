@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import * as messages from "../messages.json";
+  import Logo from "./Logo.svelte";
   import * as config from "../config.json";
 
   onMount(async () => {
@@ -20,12 +21,21 @@
 
   const getComponents = (async () => {
     const response = await fetch(config.componentUrl);
-    return await response.json();
+    console.log(response);
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw Error(response.statusText);
+    }
   })();
 
   const getIncidents = (async () => {
     const response = await fetch(config.incidentUrl);
-    return await response.json();
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw Error(response.statusText);
+    }
   })();
 
   const dateFormat = (date) => {
@@ -101,51 +111,6 @@
     background-color: #ffbaba;
   }
 
-  @keyframes pulse {
-    from {
-      opacity: 1;
-      transform: scale(1);
-    }
-    to {
-      opacity: 0.25;
-      transform: scale(0.75);
-    }
-  }
-
-  .spinner-box {
-    width: 20px;
-    height: 20px;
-    display: block;
-    float: left;
-  }
-
-  /* PULSE BUBBLES */
-
-  .pulse-container {
-    width: 70px;
-    height: 45px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .pulse-bubble {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #a32a61;
-  }
-
-  .pulse-bubble-1 {
-    animation: pulse 2s ease 0s infinite alternate;
-  }
-  .pulse-bubble-2 {
-    animation: pulse 2s ease 0.2s infinite alternate;
-  }
-  .pulse-bubble-3 {
-    animation: pulse 4s ease 4s infinite alternate;
-  }
-
   #app {
     padding: 10px 80px;
     font-weight: bold;
@@ -154,14 +119,7 @@
 </style>
 
 <div id="wrapper">
-  <div class="spinner-box">
-    <div class="pulse-container">
-      <div class="pulse-bubble pulse-bubble-1" />
-      <div class="pulse-bubble pulse-bubble-2" />
-      <div class="pulse-bubble pulse-bubble-3" />
-    </div>
-  </div>
-
+  <Logo />
   <div id="app">{getMessage('service_status')}</div>
   <div class="section">{getMessage('component')}</div>
   {#await getComponents}
