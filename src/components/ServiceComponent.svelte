@@ -26,7 +26,7 @@
       <div class="row component">
         <div class="col-md-8">{component.title}</div>
         <div class="col-md-4 label " style="background:#{label.color}">
-          {label.name}
+          {getMessage(label.name)}
         </div>
       </div>
     {/if}
