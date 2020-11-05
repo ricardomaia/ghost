@@ -139,7 +139,7 @@
       </div>
     {/each}
   {:catch error}
-    <div class="error">{error}</div>
+    <div class="error">{getMessage(error)}</div>
   {/await}
 
   <div class="section ucfirst">{getMessage('past_incidents')}</div>
@@ -162,6 +162,6 @@
       </div>
     {/each}
   {:catch error}
-    <div class="error">{error}</div>
+    <div class="error">{getMessage(error)}</div>
   {/await}
 </div>
