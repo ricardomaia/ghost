@@ -4,16 +4,13 @@
   import * as config from "../config.json";
 
   onMount(async () => {
-    console.log("Mounted");
+    /** console.log("Mounted"); */
   });
 
   const getLanguage = () => {
     const userLang = navigator.language || navigator.userLanguage;
     const lang = userLang.replace("-", "_");
     const supportedLanguages = ["en", "pt-BR"];
-    supportedLanguages.includes(userLang)
-      ? console.log(`'${userLang}' supported`)
-      : console.log(`'${userLang}' NOT supported`);
     return lang;
   };
 
