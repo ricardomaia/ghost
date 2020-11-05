@@ -1,7 +1,9 @@
 <style>
   .logo {
-    padding: 5px 20px;
-    margin: 5px 10px 0px 20px;
+    width: 40px;
+    padding: 10px;
+    margin-right: 10px;
+    float: left;
     background-image: url("./status-page-logo.svg");
     background-size: contain;
     background-repeat: no-repeat;

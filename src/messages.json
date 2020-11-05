@@ -14,7 +14,9 @@
     "updated": "updated",
     "closed": "closed",
     "rate limit exceeded": "API rate limit exceeded.",
-    "reset_time": "You can try again at: "
+    "reset_time": "You can try again at: ",
+    "reloading_in": "Reloading in",
+    "seconds": "seconds"
   },
   "pt_BR": {
     "component": "componente",
@@ -31,6 +33,8 @@
     "updated": "atualizado",
     "closed": "fechado",
     "rate limit exceeded": "Limite de uso da API excedido.",
-    "reset_time": "Você poderá tentar novamente em: "
+    "reset_time": "Você poderá tentar novamente em: ",
+    "reloading_in": "Atualizando em",
+    "seconds": "segundos"
   }
 }

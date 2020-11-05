@@ -1,5 +1,6 @@
 <script>
   import { getMessage } from "../library/getMessage";
+  import PageRefresh from "./PageRefresh.svelte";
   import Logo from "./Logo.svelte";
   import { Button } from "sveltestrap";
 </script>
@@ -14,5 +15,10 @@
 </style>
 
 <div class="row">
-  <Logo /><span class="app-title">{getMessage('service_status')}</span>
+  <div class="col-md-8">
+    <Logo /><span class="app-title">{getMessage('service_status')}</span>
+  </div>
+  <div class="col-md-4">
+    <PageRefresh />
+  </div>
 </div>
