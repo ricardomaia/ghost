@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { getMessage } from "../library/getMessage";
   import { dateFormat } from "../library/dateFormat";
+  import { dateSubDays } from "../library/dateSubDays";
   import MessageBox from "./MessageBox.svelte";
   import ServiceComponent from "./ServiceComponent.svelte";
   import Incident from "./Incident.svelte";
@@ -12,7 +13,11 @@
   });
 
   const getIssues = (async () => {
-    let repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all`;
+    const today = new Date();
+    const dateLimit = dateSubDays(today, 7);
+    const dateLimitISO = dateLimit.toISOString();
+
+    let repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&since=${dateLimitISO}`;
     if (config.env == "development") repoUrl = "issues.json";
 
     const response = await fetch(repoUrl);

@@ -2,7 +2,7 @@
   import { getMessage } from "../library/getMessage";
   import PageRefresh from "./PageRefresh.svelte";
   import Logo from "./Logo.svelte";
-  import { Button } from "sveltestrap";
+  import * as config from "../config.json";
 </script>
 
 <style>
@@ -19,6 +19,8 @@
     <Logo /><span class="app-title">{getMessage('service_status')}</span>
   </div>
   <div class="col-md-4">
-    <PageRefresh />
+    {#if config.auto_refresh}
+      <PageRefresh />
+    {/if}
   </div>
 </div>

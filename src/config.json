@@ -1,5 +1,6 @@
 {
   "user": "ricardomaia",
   "repo": "statuspage",
-  "env": "production"
+  "env": "production",
+  "auto_refresh": true
 }
