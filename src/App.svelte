@@ -4,10 +4,24 @@
   import Footer from "./components/Footer.svelte";
 </script>
 
+<style>
+  #wrapper {
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 33px -32px;
+    border-radius: 3px;
+    background-color: white;
+    padding: 16px;
+    max-width: 80vw;
+    margin: auto;
+  }
+</style>
+
 <svelte:head>
   <script async defer src="https://buttons.github.io/buttons.js">
   </script>
 </svelte:head>
-<Header />
-<StatusPage />
-<Footer />
+
+<div id="wrapper">
+  <Header />
+  <StatusPage />
+  <Footer />
+</div>

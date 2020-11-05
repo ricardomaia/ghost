@@ -2,30 +2,24 @@
 </script>
 
 <style>
-  #footer {
-    box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 33px -32px;
-    border-radius: 3px;
-    background-color: white;
-    padding: 16px;
-    max-width: 80vw;
-    margin: auto;
+  .powered {
     text-align: right;
+    margin-right: 5px;
   }
 </style>
 
-<div id="footer">
-  <div id="powered">
-    Powered by
-    <a href="https://github.com/ricardomaia/statuspage" target="_blank">
-      Status Page</a>
-  </div>
-
-  <div id="github">
+<div class="row">
+  <div class="col">
     <a
       class="github-button"
       href="https://github.com/ricardomaia"
       data-size="large"
       data-show-count="true"
-      aria-label="Follow @ricardomaia on GitHub">Follow @ricardomaia</a>
+      aria-label="Follow @ricardomaia on GitHub">@ricardomaia</a>
+  </div>
+  <div class="col powered">
+    Powered by
+    <a href="https://github.com/ricardomaia/statuspage" target="_blank">
+      Status Page</a>
   </div>
 </div>
