@@ -5,6 +5,16 @@ body {
   height: 100%;
 }
 
+#github {
+  display: inline;
+  float: left;
+}
+
+#powered {
+  display: inline;
+  float: right;
+}
+
 body {
   color: #333;
   margin: 0;

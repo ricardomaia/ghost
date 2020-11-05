@@ -1,3 +1,6 @@
+<script async defer src="https://buttons.github.io/buttons.js">
+</script>
+
 <style>
   #footer {
     box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 33px -32px;
@@ -11,7 +14,18 @@
 </style>
 
 <div id="footer">
-  Powered by
-  <a href="https://github.com/ricardomaia/statuspage" target="_blank">
-    Status Page</a>
+  <div id="powered">
+    Powered by
+    <a href="https://github.com/ricardomaia/statuspage" target="_blank">
+      Status Page</a>
+  </div>
+
+  <div id="github">
+    <a
+      class="github-button"
+      href="https://github.com/ricardomaia"
+      data-size="large"
+      data-show-count="true"
+      aria-label="Follow @ricardomaia on GitHub">Follow @ricardomaia</a>
+  </div>
 </div>
