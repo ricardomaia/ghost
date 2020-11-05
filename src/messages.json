@@ -13,7 +13,8 @@
     "registered": "registered",
     "updated": "updated",
     "closed": "closed",
-    "Error: rate limit exceeded": "API rate limit exceeded. For more details visit https://developer.github.com/v3/#rate-limiting"
+    "rate limit exceeded": "API rate limit exceeded.",
+    "reset_time": "You can try again at: "
   },
   "pt_BR": {
     "component": "componente",
@@ -29,6 +30,7 @@
     "registered": "registrado",
     "updated": "atualizado",
     "closed": "fechado",
-    "Error: rate limit exceeded": "Limite de uso da API excedido. Para mais detalhes, visite https://developer.github.com/v3/#rate-limiting"
+    "rate limit exceeded": "Limite de uso da API excedido.",
+    "reset_time": "Você poderá tentar novamente em: "
   }
 }

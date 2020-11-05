@@ -21,11 +21,17 @@
 
   const getComponents = (async () => {
     const response = await fetch(config.componentUrl);
-    console.log(response);
     if (response.ok) {
       return response.json();
     } else {
-      throw Error(response.statusText);
+      let resetTime = dateFormat(
+        new Date(response.headers.get("X-RateLimit-Reset") * 1000)
+      );
+      throw Error(
+        `${getMessage(response.statusText)} ${getMessage(
+          "reset_time"
+        )} ${resetTime}`
+      );
     }
   })();
 
@@ -34,7 +40,14 @@
     if (response.ok) {
       return response.json();
     } else {
-      throw Error(response.statusText);
+      let resetTime = dateFormat(
+        new Date(response.headers.get("X-RateLimit-Reset") * 1000)
+      );
+      throw Error(
+        `${getMessage(response.statusText)} ${getMessage(
+          "reset_time"
+        )} ${resetTime}`
+      );
     }
   })();
 
@@ -139,7 +152,7 @@
       </div>
     {/each}
   {:catch error}
-    <div class="error">{getMessage(error)}</div>
+    <div class="error">{error}</div>
   {/await}
 
   <div class="section ucfirst">{getMessage('past_incidents')}</div>
@@ -162,6 +175,6 @@
       </div>
     {/each}
   {:catch error}
-    <div class="error">{getMessage(error)}</div>
+    <div class="error">{error}</div>
   {/await}
 </div>
