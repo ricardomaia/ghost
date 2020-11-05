@@ -12,7 +12,8 @@
     "partial outage": "partial outage",
     "registered": "registered",
     "updated": "updated",
-    "closed": "closed"
+    "closed": "closed",
+    "rate_limit_exceeded": "API rate limit exceeded. For more details visit https://developer.github.com/v3/#rate-limiting"
   },
   "pt_BR": {
     "component": "componente",
@@ -27,6 +28,7 @@
     "partial outage": "parcialmente indisponível",
     "registered": "registrado",
     "updated": "atualizado",
-    "closed": "fechado"
+    "closed": "fechado",
+    "rate_limit_exceeded": "Limite de uso da API excedido. Para mais detalhes, visite https://developer.github.com/v3/#rate-limiting"
   }
 }
