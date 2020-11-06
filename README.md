@@ -6,7 +6,7 @@ Do you like it? Support this project!
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B12LOPH)
 
-<img src="https://github.com/ricardomaia/statuspage/blob/main/screenshot.png" width="600"/>
+<img src="https://github.com/ricardomaia/statuspage/blob/main/screenshot.png" width="600" />
 
 ## Demo
 https://ricardomaia.github.io/statuspage/
@@ -38,16 +38,19 @@ If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommen
 
 ## Configuration
 
-Set your config.json file like this, replacing `:user` and `:repo` with your username and repository name.
+Set your `config.json` file like this, replacing `user` and `repo` with your username and repository name.
 
 ```json
 {
-  "componentUrl": "https://api.github.com/repos/:user/:repo/issues?state=all&labels=component",
-  "incidentUrl": "https://api.github.com/repos/:user/:repo/issues?state=all&labels=incident"
+  "user": "ricardomaia",
+  "repo": "statuspage",
+  "env": "production",
+  "auto_refresh": true
 }
-
 ```
+Additionally you can set `auto_refresh` true or false to enable or disable page update each 60 seconds.
 
+Finally, the `env` directive may have two values, `development` or `production`. Development mode use a local json file instead of connect GitHub API.
 
 ## Building and running in production mode
 
