@@ -1,11 +1,12 @@
 <script>
   import { getMessage } from "../library/getMessage";
   import { dateFormat } from "../library/dateFormat";
+  let incident_class = "incident-closed";
   export let issues;
 </script>
 
 <style>
-  .incident-title {
+  .incident-status {
     font-weight: bold;
   }
 
@@ -13,13 +14,34 @@
     color: #999;
     font-size: 90%;
   }
+
+  .incident-status {
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin: 0px 2px;
+    font-size: 80%;
+  }
+
+  .incident-open {
+    color: #ffffff;
+    background-color: #20c997;
+  }
+
+  .incident-closed {
+    color: #ffffff;
+    background-color: #dc3545;
+  }
 </style>
 
 {#each issues as incident}
   {#each incident.labels as label}
     {#if label.name == 'incident'}
       <div class="row incident">
-        <div class="col-md-12 incident-title">{incident.title}</div>
+        <div class="col-md-12">
+          <span
+            class="incident-status incident-{incident.state}">{getMessage(incident.state)}</span>
+          {incident.title}
+        </div>
       </div>
 
       <div class="row">
