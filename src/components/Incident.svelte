@@ -6,6 +6,9 @@
 </script>
 
 <style>
+  .incident-titlenp {
+    font-weight: bold;
+  }
   .incident-status {
     font-weight: bold;
   }
@@ -40,7 +43,7 @@
         <div class="col-md-12">
           <span
             class="incident-status incident-{incident.state}">{getMessage(incident.state)}</span>
-          {incident.title}
+          <span class="incident-title">{incident.title}</span>
         </div>
       </div>
 
