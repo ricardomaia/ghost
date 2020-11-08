@@ -9,6 +9,11 @@
   .incident-title {
     font-weight: bold;
   }
+
+  .incident-body {
+    text-align: justify;
+  }
+
   .incident-status {
     font-weight: bold;
   }
@@ -48,7 +53,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-12">{incident.body}</div>
+        <div class="col-md-12 incident-body">{incident.body}</div>
       </div>
 
       <div class="row incident-update">
