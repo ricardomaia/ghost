@@ -1,7 +1,7 @@
 #wrapper.svelte-trf69a{box-shadow:rgba(0, 0, 0, 0.75) 0px 0px 33px -32px;border-radius:3px;background-color:white;padding:16px;max-width:80vw;margin:auto}
 .powered.svelte-1y2kqgw{text-align:right;margin-right:5px}
 .app-title.svelte-oh5hlr{font-weight:bolder;text-transform:uppercase;font-size:large;line-height:40px}
-.incident-title.svelte-1lsnqto{font-weight:bold}.incident-update.svelte-1lsnqto{color:#999;font-size:90%}
+.incident-status.svelte-gnqgu6{font-weight:bold}.incident-update.svelte-gnqgu6{color:#999;font-size:90%}.incident-status.svelte-gnqgu6{padding:2px 6px;border-radius:3px;margin:0px 2px;font-size:80%}.incident-open.svelte-gnqgu6{color:#ffffff;background-color:#20c997}.incident-closed.svelte-gnqgu6{color:#ffffff;background-color:#dc3545}
 .logo.svelte-1c052gy{width:40px;padding:10px;margin-right:10px;float:left;background-image:url("./status-page-logo.svg");background-size:contain;background-repeat:no-repeat;background-position:center;color:transparent}
 .page-refresh.svelte-1vkkpn1{color:#c0c0c0;line-height:40px;text-align:right;font-size:90%;padding-left:15px;float:left}
 .label.svelte-1m34x7f{padding:5px 12px;border-radius:5px;width:fit-content;text-align:center}.component.svelte-1m34x7f{background-color:rgb(247, 248, 249);border-radius:3px;align-items:center;margin:8px 0px 8px 0px;padding:5px 10px}
