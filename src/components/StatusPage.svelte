@@ -14,10 +14,11 @@
 
   const getIssues = (async () => {
     const today = new Date();
-    const dateLimit = dateSubDays(today, 7);
+    const incident_days = config.incident_days;
+    const dateLimit = dateSubDays(today, incident_days);
     const dateLimitISO = dateLimit.toISOString();
 
-    let repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&since=${dateLimitISO}`;
+    let repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&sort=updated&direction=desc&labels=statuspage&since=${dateLimitISO}`;
     if (config.env == "development") repoUrl = "issues.json";
 
     const response = await fetch(repoUrl);
