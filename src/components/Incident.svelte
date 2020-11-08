@@ -6,7 +6,7 @@
 </script>
 
 <style>
-  .incident-titlenp {
+  .incident-title {
     font-weight: bold;
   }
   .incident-status {
