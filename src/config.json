@@ -1,7 +1,7 @@
 {
   "user": "ricardomaia",
   "repo": "statuspage",
-  "env": "development",
+  "env": "production",
   "auto_refresh": true,
   "incident_days": 7
 }
