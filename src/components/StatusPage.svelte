@@ -35,9 +35,8 @@
         );
 
         throw Error(
-          `${getMessage(response.statusText)} ${getMessage(
-            "reset_time"
-          )} ${resetTime}`
+          `${getMessage(response.statusText)} 
+          ${getMessage("reset_time", { "%reset_time%": resetTime })}`
         );
       }
     }

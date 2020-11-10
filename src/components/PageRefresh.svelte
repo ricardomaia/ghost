@@ -37,7 +37,5 @@ user making requests.
 https://developer.github.com/v3/#rate-limiting
 -->
 <div class="row page-refresh">
-  {getMessage('reloading_in')}:
-  {remaining}
-  {getMessage('seconds')}.
+  {getMessage('reloading_in', { '%seconds%': remaining })}
 </div>
