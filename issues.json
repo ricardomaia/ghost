@@ -502,7 +502,7 @@
         "node_id": "MDU6TGFiZWwyNDc4NjI0NjM2",
         "url": "https://api.github.com/repos/ricardomaia/statuspage/labels/partial%20outage",
         "name": "partial outage",
-        "color": "d93f0b",
+        "color": "ed4bac",
         "default": false,
         "description": ""
       }
