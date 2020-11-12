@@ -44,17 +44,20 @@ Set your `config.json` file like this, replacing `user` and `repo` with your use
 {
   "user": "ricardomaia",
   "repo": "statuspage",
-  "env": "production",
   "auto_refresh": true,
   "incident_days": 7
 }
 ```
 
-The `env` option may have two values, `development` or `production`. Development mode use a local json file instead of connect GitHub API.
-
 Set `auto_refresh` true or false to enable or disable page update each 60 seconds.
 
-Finally, `incident days`, defines the number of days in the issues history to be queried.
+Finally, `incident_days`, defines the number of days in the issues history to be queried.
+
+Create a `.env` file into root directory and set the `PRODUCTION` property `true` or `false` (development mode). Development mode use a local json file instead of connect GitHub API.:
+
+```
+PRODUCTION=true
+```
 
 ## Building and running in production mode
 
