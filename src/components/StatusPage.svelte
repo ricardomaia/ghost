@@ -18,8 +18,9 @@
     const dateLimit = dateSubDays(today, incident_days);
     const dateLimitISO = dateLimit.toISOString();
 
-    let repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&sort=updated&direction=desc&labels=statuspage&since=${dateLimitISO}`;
-    if (config.env == "development") repoUrl = "issues.json";
+    let repoUrl = "issues.json";
+    if (__app.env.PRODUCTION)
+      repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&sort=updated&direction=desc&labels=statuspage&since=${dateLimitISO}`;
 
     const response = await fetch(repoUrl);
     if (response.ok) {
