@@ -53,21 +53,26 @@ Set `auto_refresh` true or false to enable or disable page update each 60 second
 
 Finally, `incident_days`, defines the number of days in the issues history to be queried.
 
-Create a `.env` file into root directory and set the `PRODUCTION` property `true` or `false` (development mode). Development mode use a local json file instead of connect GitHub API.:
-
-```
-PRODUCTION=true
-```
+⚠️ Development mode uses a local json file instead of connect GitHub API.
 
 ## Building and running in production mode
 
-To create an optimised version of the app:
+To create an optimised (production) version of the app:
 
 ```bash
 npm run build
 ```
 
+And run it:
+
+```bash
+npm run start
+```
+⚠️ The production mode uses the settings in your `config.json` file and connects to the GitHub API.
+
 ## Deploying to GitHub Pages
+
+The command below compiles a production version and push to gh-pages branch of your repository.
 
 ```bash
 npm run publish
