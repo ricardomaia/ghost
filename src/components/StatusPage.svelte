@@ -20,7 +20,7 @@
 
     let repoUrl = "issues.json";
 
-    if (__app.env.PRODUCTION == "true") {
+    if (process.env.isProd) {
       repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&sort=updated&direction=desc&labels=statuspage&since=${dateLimitISO}`;
     }
 
