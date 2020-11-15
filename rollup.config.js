@@ -6,6 +6,7 @@ import { terser } from "rollup-plugin-terser";
 import json from "@rollup/plugin-json";
 import replace from "@rollup/plugin-replace";
 import { config } from "dotenv";
+import dev from "rollup-plugin-dev";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -79,6 +80,19 @@ export default {
     // In dev mode, call `npm run start` once
     // the bundle has been generated
     !production && serve(),
+
+    // In dev mode, call `npm run start` once
+    // the bundle has been generated
+    // !production && serve(), // Also Mark/Delete this line.. no longer needed.
+    !production &&
+      dev({
+        dirs: ["public"],
+        spa: "public/index.html",
+        port: 5000,
+        proxy: {
+          "/api/*": "path/to/your/proxy/",
+        },
+      }),
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
