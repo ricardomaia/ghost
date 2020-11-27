@@ -20,6 +20,6 @@
   <div class="col powered">
     Powered by
     <a href="https://github.com/ricardomaia/statuspage" target="_blank">
-      Status Page</a>
+      GHoSt</a>
   </div>
 </div>

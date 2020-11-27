@@ -5,7 +5,7 @@
   $: remaining = 60 - count;
 
   const countdown = () => {
-    if (remaining > 0) {
+    if (remaining >= 0) {
       count++;
     }
   };

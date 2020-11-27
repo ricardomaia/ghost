@@ -4,25 +4,48 @@
 </script>
 
 <style>
-  .label {
-    padding: 5px 12px;
-    border-radius: 5px;
-    width: fit-content;
-    text-align: center;
+  .component-title::before {
+    display: inline-block;
+    content: "";
+    -webkit-border-radius: 0.375rem;
+    border-radius: 0.375rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: 0.5rem;
   }
 
-  .label-text {
-    color: white;
-    font-weight: bold;
-    font-size: 90%;
+  .label {
+    text-align: right;
+    color: #cccccc;
+    text-transform: initial;
+  }
+
+  .label:first-letter {
+    text-transform: uppercase;
+  }
+
+  .component-title.operational::before {
+    background-color: green;
+  }
+
+  .component-title.performance-issues::before {
+    background-color: gold;
+  }
+  .component-title.major-outage::before {
+    background-color: red;
+  }
+
+  .component-title.partial-outage::before {
+    background-color: blue;
   }
 
   .component {
     background-color: rgb(247, 248, 249);
-    border-radius: 3px;
+    border-radius: 7px;
     align-items: center;
-    margin: 8px 0px 8px 0px;
-    padding: 5px 10px;
+    margin: 4px 0px 4px 0px;
+    padding: 8px 2px;
+    color: #000000;
   }
 </style>
 
@@ -30,8 +53,10 @@
   {#each component.labels as label}
     {#if label.name == 'operational' || label.name == 'performance issues' || label.name == 'major outage' || label.name == 'partial outage'}
       <div class="row component">
-        <div class="col-9 col-md-9">{component.title}</div>
-        <div class="col-3 col-md-3 label " style="background:#{label.color}">
+        <div class="col-8 col-md-8">
+          <span class="component-title {label.name}">{component.title}</span>
+        </div>
+        <div class="col-4 col-md-4 label">
           <span class="label-text">{getMessage(label.name)}</span>
         </div>
       </div>

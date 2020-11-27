@@ -1,74 +1,78 @@
 <script>
   import { getMessage } from "../library/getMessage";
   import { dateFormat } from "../library/dateFormat";
+  import { getDate } from "../library/dateFormat";
+  import { getTime } from "../library/dateFormat";
   let incident_class = "incident-closed";
   export let issues;
 </script>
 
 <style>
-  .incident-title {
-    font-weight: bold;
+  .created {
+    word-break: break-all;
+    white-space: pre-line;
+    float: left;
+    padding-left: 10px;
+    margin: -2px 0 0 4px;
   }
 
-  .incident-body {
-    text-align: justify;
-  }
-
-  .incident-status {
-    font-weight: bold;
-  }
-
-  .incident-update {
-    color: #999;
-    font-size: 90%;
-  }
-
-  .incident-status {
-    padding: 2px 6px;
-    border-radius: 3px;
-    margin: 0px 2px;
+  .status {
+    color: #20c997;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 80%;
+    line-height: 1rem;
+  }
+  .timeline {
+    border-left: solid 5px #e6e6e6;
+  }
+  .status::before {
+    display: inline-block;
+    content: "";
+    -webkit-border-radius: 3rem;
+    border-radius: 3rem;
+    height: 0.8rem;
+    width: 0.8rem;
+    margin-right: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px #20c997;
   }
 
-  .incident-open {
-    color: #ffffff;
-    background-color: #20c997;
-  }
-
-  .incident-closed {
-    color: #ffffff;
-    background-color: #dc3545;
+  .incident-container {
+    margin-top: 10px;
   }
 </style>
 
-{#each issues as incident}
-  {#each incident.labels as label}
-    {#if label.name == 'incident'}
-      <div class="row incident">
-        <div class="col-md-12">
-          <span
-            class="incident-status incident-{incident.state}">{getMessage(incident.state)}</span>
-          <span class="incident-title">{incident.title}</span>
-        </div>
-      </div>
+<div class="incident-container">
+  {#each issues as incident}
+    {#each incident.labels as label}
+      {#if label.name == 'incident'}
+        <div class="row">
+          <div class="col-md-2">
+            <span class="status">{getMessage(incident.state)}</span><br />
+            <div class="created timeline">
+              {getDate(incident.created_at)}
+            </div><br />
+            <div class="created timeline">
+              {getTime(incident.created_at)}<br /><br />
+            </div>
+          </div>
+          <div class="col-md-10">
+            {incident.title}<br />
+            {incident.body}
 
-      <div class="row">
-        <div class="col-md-12 incident-body">{incident.body}</div>
-      </div>
-
-      <div class="row incident-update">
-        <div class="col-md-12">
-          {getMessage('registered')}:
-          {dateFormat(incident.created_at)}
-          -
-          {getMessage('updated')}:
-          {dateFormat(incident.updated_at)}
-          -
-          {getMessage('closed')}:
-          {dateFormat(incident.closed_at)}
+            <div class="row">
+              <div class="col-md-12">
+                {getMessage('updated')}:
+                {dateFormat(incident.updated_at)}
+                -
+                {getMessage('closed')}:
+                {dateFormat(incident.closed_at)}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <hr />
-    {/if}
+      {/if}
+    {/each}
   {/each}
-{/each}
+</div>

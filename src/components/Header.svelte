@@ -15,10 +15,10 @@
 </style>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-9">
     <Logo /><span class="app-title">{getMessage('service_status')}</span>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     {#if config.auto_refresh}
       <PageRefresh />
     {/if}
