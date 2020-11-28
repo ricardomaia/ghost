@@ -53,7 +53,7 @@ Set your `config.json` file like this, replacing `user` and `repo` with your use
   "user": "ricardomaia",
   "repo": "statuspage",
   "auto_refresh": true,
-  "incident_days": 7
+  "incident_days": 365
 }
 ```
 
