@@ -1,4 +1,4 @@
-# Status Page
+# Ghost - Github Hosted Status Page
 
 A status page to host on GitHub pages. Its uses GitHub issues to show the status of your service components and incidents.
 
