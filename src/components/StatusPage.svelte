@@ -21,7 +21,7 @@
     let repoUrl = "issues.json";
 
     if (process.env.isProd) {
-      repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&sort=updated&direction=desc&labels=statuspage&since=${dateLimitISO}`;
+      repoUrl = `https://api.github.com/repos/${config.user}/${config.repo}/issues?state=all&sort=created&direction=desc&labels=statuspage&since=${dateLimitISO}`;
     }
 
     const response = await fetch(repoUrl);
