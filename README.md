@@ -17,7 +17,7 @@ _Note that you must have [Node.js](https://nodejs.org) and [Git](https://git-scm
 
 [Fork the repository](https://github.com/ricardomaia/statuspage/fork). Click on the right top button of respository page.
 
-<img src="https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png" width="300" />
+<a href="https://github.com/ricardomaia/statuspage/fork"><img src="https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png" width="300" alt="Fork Button" /></a>
 
 Now clone your forked repository on your computer. On terminal type:
 
