@@ -78,20 +78,46 @@
     font-size: 80%;
   }
 
-  .incident-title {
+  .incident-title-open {
     font-weight: bold;
     font-size: 110%;
   }
 
-  .incident-body {
+  .incident-title-closed {
+    font-weight: bold;
+    font-size: 110%;
+    color: #b3b3b3;
+    filter: saturate(0%) opacity(70%);
+    -webkit-filter: saturate(0%) opacity(70%);
+    -moz-filter: saturate(0%) opacity(70%);
+  }
+
+  .incident-body-open {
     text-align: justify;
     color: #555555;
   }
 
-  .incident-history {
+  .incident-body-closed {
+    text-align: justify;
+    color: #555555;
+    filter: saturate(0%) opacity(70%);
+    -webkit-filter: saturate(0%) opacity(70%);
+    -moz-filter: saturate(0%) opacity(70%);
+  }
+
+  .incident-history-open {
     font-size: 85%;
     color: #e15f41;
     margin-bottom: 20px;
+  }
+
+  .incident-history-closed {
+    font-size: 85%;
+    color: #e15f41;
+    margin-bottom: 20px;
+    filter: saturate(0%) opacity(70%);
+    -webkit-filter: saturate(0%) opacity(70%);
+    -moz-filter: saturate(0%) opacity(70%);
   }
   .partial-border {
     display: inline-block;
@@ -121,10 +147,13 @@
           </div>
 
           <div class="col-md-10">
-            <span class="incident-title"> {incident.title}</span><br />
-            <span class="incident-body partial-border"> {incident.body} </span>
+            <span class="incident-title-{incident.state}">
+              {incident.title}</span><br />
+            <span class="incident-body-{incident.state} partial-border">
+              {incident.body}
+            </span>
 
-            <div class="row incident-history">
+            <div class="row incident-history-{incident.state}">
               <div class="col-md-12">
                 {getMessage('updated')}:
                 {dateFormat(incident.updated_at)}
