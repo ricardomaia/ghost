@@ -2,5 +2,5 @@
   "user": "ricardomaia",
   "repo": "statuspage",
   "auto_refresh": true,
-  "incident_days": 7
+  "incident_days": 365
 }
