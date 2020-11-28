@@ -13,7 +13,7 @@ https://ricardomaia.github.io/statuspage/
 
 ## Get started
 
-_Note that you must have [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads) installed on your computer._
+_Note that you must have [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads) installed on your computer_ and a [GitHub](https://github.com/join) account.
 
 [Fork the repository](https://github.com/ricardomaia/statuspage/fork). Click on the right top button of respository page.
 
