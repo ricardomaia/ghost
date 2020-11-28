@@ -2,6 +2,8 @@
   "en": {
     "component": "component",
     "incident": "incident",
+    "service component": "Service Components",
+    "incident history": "Incidents History",
     "service_status": "Service Status",
     "past_incidents": "Past incidents",
     "loading": "loading",
@@ -21,6 +23,8 @@
   "pt_BR": {
     "component": "componente",
     "incident": "incidente",
+    "service component": "Componentes de Serviço",
+    "incident history": "Histórico de Incidentes",
     "service_status": "Status dos Serviços",
     "past_incidents": "Incidentes anteriores",
     "loading": "carregando",

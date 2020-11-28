@@ -10,7 +10,6 @@
     border-radius: 3px;
     background-color: white;
     padding: 16px;
-    max-width: 80vw;
     margin: auto;
   }
 </style>
@@ -18,6 +17,7 @@
 <svelte:head>
   <script async defer src="https://buttons.github.io/buttons.js">
   </script>
+  <title>Ghost - Git Hosted Status Page</title>
 </svelte:head>
 
 <div id="wrapper">

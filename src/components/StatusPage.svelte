@@ -56,8 +56,7 @@
       "Lucida Sans", Arial, sans-serif;
     font-weight: bolder;
     padding: 5px 20px;
-    text-transform: capitalize;
-    margin: 0 1px 0 1px;
+    margin: 10px 1px 0 1px;
   }
 
   .green {
@@ -74,9 +73,9 @@
 {#await getIssues}
   <MessageBox type="primary" message="{getMessage('loading')}..." />
 {:then data}
-  <div class="row section green">{getMessage('component')}</div>
+  <div class="row section green">{getMessage('service component')}</div>
   <ServiceComponent issues={data} />
-  <div class="row section violet">{getMessage('incident')}</div>
+  <div class="row section violet">{getMessage('incident history')}</div>
   <Incident issues={data} />
 {:catch error}
   <MessageBox type="danger" message={error} />

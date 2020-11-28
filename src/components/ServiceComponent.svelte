@@ -25,18 +25,18 @@
   }
 
   .component-title.operational::before {
-    background-color: green;
+    background-color: #20c997;
   }
 
   .component-title.performance-issues::before {
-    background-color: gold;
+    background-color: #ffcc00;
   }
   .component-title.major-outage::before {
-    background-color: red;
+    background-color: #dc3545;
   }
 
   .component-title.partial-outage::before {
-    background-color: blue;
+    background-color: #5f8dd3;
   }
 
   .component {
@@ -54,7 +54,8 @@
     {#if label.name == 'operational' || label.name == 'performance issues' || label.name == 'major outage' || label.name == 'partial outage'}
       <div class="row component">
         <div class="col-8 col-md-8">
-          <span class="component-title {label.name}">{component.title}</span>
+          <span
+            class="component-title {label.name.replace(' ', '-')}">{component.title}</span>
         </div>
         <div class="col-4 col-md-4 label">
           <span class="label-text">{getMessage(label.name)}</span>

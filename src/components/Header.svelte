@@ -6,21 +6,18 @@
 </script>
 
 <style>
-  .app-title {
-    font-weight: bolder;
-    text-transform: uppercase;
-    font-size: large;
-    line-height: 40px;
+  .refresh {
+    padding-right: 20px;
   }
 </style>
 
 <div class="row">
-  <div class="col-md-9">
-    <Logo /><span class="app-title">{getMessage('service_status')}</span>
-  </div>
-  <div class="col-md-3">
-    {#if config.auto_refresh}
-      <PageRefresh />
-    {/if}
+  <div class="col-md-12">
+    <Logo />
+    <div class="refresh float-right">
+      {#if config.auto_refresh}
+        <PageRefresh />
+      {/if}
+    </div>
   </div>
 </div>
