@@ -13,9 +13,17 @@ https://ricardomaia.github.io/statuspage/
 
 ## Get started
 
-_Note that you will need to have [Node.js](https://nodejs.org) installed._
+_Note that you must have [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads) installed on your computer._
 
-[Clone or fork the repository](https://github.com/ricardomaia/statuspage/fork)
+[Fork the repository](https://github.com/ricardomaia/statuspage/fork). Click on the right top button of respository page.
+
+<img src="https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png" width="300" />
+
+Now clone your forked repository on your computer. On terminal type:
+
+```terminal
+git clone https://github.com/[your_username]/statuspage.git
+```
 
 Install the dependencies...
 
