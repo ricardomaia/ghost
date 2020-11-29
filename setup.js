@@ -63,7 +63,7 @@ console.log(
 
 rl.question(chalk.yellow("Personal access token: "), function (token) {
   const octokit = new Octokit({
-    auth: token, //"e81c621690bdda37cbc7993c62d6774caa5cd4a2",
+    auth: token,
   });
 
   // Get repo labels
@@ -98,7 +98,7 @@ rl.question(chalk.yellow("Personal access token: "), function (token) {
           const result2 = octokit
             .request(`POST /repos/${username}/${repo}/labels`, {
               name: label,
-              color: "000000",
+              color: "5d536c",
               description: "Created by Ghost setup",
             })
             .then((response) => {
@@ -115,16 +115,16 @@ rl.question(chalk.yellow("Personal access token: "), function (token) {
     });
 
   rl.close();
-});
 
-// Get user info
-/*
-  const result = octokit
-    .request("/user")
-    .then((response) => {
-      console.log(chalk.green("User authentication successful!"));
-    })
-    .catch(function (error) {
-      console.log(chalk.red(error.message));
-    });
-*/
+  const config_content = `{
+  "user": "${username}",
+  "repo": "${repo}",
+  "auto_refresh": true,
+  "incident_days": 365
+}`;
+
+  fs.writeFile("./src/config.json", config_content, function (err) {
+    if (err) throw err;
+    console.log(chalk.green("Config file created!"));
+  });
+});
