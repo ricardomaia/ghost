@@ -63,23 +63,10 @@ console.log(
 
 rl.question(chalk.yellow("Personal access token: "), function (token) {
   const octokit = new Octokit({
-    auth: token, //"d58f34fc66b53bb5b0167b1ef7b794f4baedb87e",
+    auth: token, //"e81c621690bdda37cbc7993c62d6774caa5cd4a2",
   });
 
-  // Get user info
-  /*
-  const result = octokit
-    .request("/user")
-    .then((response) => {
-      console.log(chalk.green("User authentication successful!"));
-    })
-    .catch(function (error) {
-      console.log(chalk.red(error.message));
-    });
-*/
-
   // Get repo labels
-
   let repo_labels = [];
   let ghost_labels = [
     "statuspage",
@@ -88,9 +75,8 @@ rl.question(chalk.yellow("Personal access token: "), function (token) {
     "partial outage",
     "major outage",
     "performance issues",
-    "foobar",
   ];
-  const result2 = octokit
+  const result = octokit
     .request(`GET /repos/${username}/${repo}/labels`, {
       owner: username,
       repo: repo,
@@ -101,12 +87,26 @@ rl.question(chalk.yellow("Personal access token: "), function (token) {
       });
 
       // Verify if ghost labels are present in repository
-
       ghost_labels.forEach((label) => {
         if (repo_labels.includes(label)) {
           console.log(`Label "${chalk.green(label)}" found!`);
+
+          // Create missing labels
         } else {
-          console.log(`Label "${chalk.red(label)}" NOT found!`);
+          console.log(`Label "${chalk.red(label)}" NOT found! Creating...`);
+
+          const result2 = octokit
+            .request(`POST /repos/${username}/${repo}/labels`, {
+              name: label,
+              color: "000000",
+              description: "Created by Ghost setup",
+            })
+            .then((response) => {
+              console.log(`Label "${chalk.green(label)}" created!`);
+            })
+            .catch(function (error) {
+              console.log(chalk.red(error.message));
+            });
         }
       });
     })
@@ -117,22 +117,14 @@ rl.question(chalk.yellow("Personal access token: "), function (token) {
   rl.close();
 });
 
-// Create a label
-function createLabels(api) {
-  try {
-    const result = api
-      .request("POST /repos/{owner}/{repo}/labels", {
-        owner: "octocat",
-        repo: "hello-world",
-        name: "name",
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(chalk.red(error.message));
-      });
-  } catch (error) {
-    console.log(chalk.red(error.message));
-  }
-}
+// Get user info
+/*
+  const result = octokit
+    .request("/user")
+    .then((response) => {
+      console.log(chalk.green("User authentication successful!"));
+    })
+    .catch(function (error) {
+      console.log(chalk.red(error.message));
+    });
+*/
