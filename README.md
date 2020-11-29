@@ -9,6 +9,7 @@ Do you like it? Support this project!
 <img src="https://github.com/ricardomaia/statuspage/blob/main/screenshot.png" width="600" />
 
 ## Demo
+
 https://ricardomaia.github.io/statuspage/
 
 ## Get started
@@ -31,6 +32,24 @@ Install the dependencies...
 cd statuspage
 npm install
 ```
+
+## Setup
+
+Ghost provides a console script to create all required label on your repository. But first you need set a **personal access token**. Go to https://github.com/settings/tokens and click on button "Generate new token". On the "Note" input field give an friendly name like "ghost" and check the options:
+
+- repo:status
+- repo_deployment and
+- public_repo
+
+So click in the "Generate token". You will see a string like `23ffabb27cb569eeb3da9599ac61608511477046`. Save it to later!
+
+```bash
+node setup.js
+```
+
+Paste your generated token.
+
+<img src="https://github.com/ricardomaia/statuspage/blob/main/setup.png" width="600" />
 
 ...then start [Rollup](https://rollupjs.org):
 
@@ -76,6 +95,7 @@ And run it:
 ```bash
 npm run start
 ```
+
 ⚠️ The production mode uses the settings in your `config.json` file and connects to the GitHub API.
 
 ## Deploying to GitHub Pages
