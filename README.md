@@ -10,7 +10,7 @@ Do you like it? Support this project!
 
 ## Demo
 
-https://ricardomaia.github.io/statuspage/
+https://ricardomaia.github.io/ghost/
 
 ## Get started
 
