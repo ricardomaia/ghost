@@ -16,20 +16,20 @@ https://ricardomaia.github.io/ghost/
 
 _Note that you must have [Node.js](https://nodejs.org) and [Git](https://git-scm.com/downloads) installed on your computer_ and a [GitHub](https://github.com/join) account.
 
-[Fork the repository](https://github.com/ricardomaia/statuspage/fork). Click on the right top button of respository page.
+[Fork the repository](https://github.com/ricardomaia/ghost/fork). Click on the right top button of respository page.
 
-<a href="https://github.com/ricardomaia/statuspage/fork"><img src="https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png" width="300" alt="Fork Button" /></a>
+<a href="https://github.com/ricardomaia/ghost/fork"><img src="https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png" width="300" alt="Fork Button" /></a>
 
 Now clone your forked repository on your computer. On terminal type:
 
 ```terminal
-git clone https://github.com/[your_username]/statuspage.git
+git clone https://github.com/[your_username]/ghost.git
 ```
 
 Install the dependencies...
 
 ```bash
-cd statuspage
+cd ghost
 npm install
 ```
 
@@ -49,7 +49,7 @@ node setup.js
 
 Paste your generated token.
 
-<img src="https://github.com/ricardomaia/statuspage/blob/main/setup.png" width="600" />
+<img src="https://github.com/ricardomaia/ghost/blob/main/setup.png" width="600" />
 
 ...then start [Rollup](https://rollupjs.org):
 
