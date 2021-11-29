@@ -2,5 +2,5 @@
   "user": "ricardomaia",
   "repo": "ghost",
   "auto_refresh": true,
-  "incident_days": 1825
+  "incident_days": 365
 }
