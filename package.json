@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "sirv-cli": "^1.0.0",
     "sveltestrap": "^3.9.5"
   }
