@@ -31,6 +31,6 @@
     "bootstrap": "^5.2.3",
     "moment": "^2.29.4",
     "sirv-cli": "^2.0.2",
-    "sveltestrap": "^3.9.5"
+    "sveltestrap": "^5.10.0"
   }
 }
