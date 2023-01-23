@@ -10,7 +10,7 @@
     "publish:nix": "npm run build && node_modules/.bin/gh-pages -d public"
   },
   "devDependencies": {
-    "@octokit/core": "^4.1.0",
+    "@octokit/core": "^4.2.0",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
